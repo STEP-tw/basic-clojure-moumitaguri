@@ -4,31 +4,41 @@
   "Returns the result of x/y unless y is 0. Returns nil when y is 0"
   {:level        :easy
    :use          '[when-not zero?]
-   :implemented? false}
-  [x y])
+   :implemented? true}
+  [x y]
+  (when-not (zero? y) nil
+                      (/ x y)
+                      )
+  )
 
 (defn informative-divide
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
   {:level        :easy
    :use          '[if-not zero?]
-   :implemented? false}
-  [x y])
+   :implemented? true}
+  [x y]
+  (if-not (zero? y) (/ x y)
+                    :infinite
+                    )
+  )
 
 (defn harishchandra
   "Only returns truthy values as themselves.
   Falsy values(false and nil) return nil"
   {:level        :easy
    :use          '[when-let]
-   :implemented? false}
-  [x])
+   :implemented? true}
+  [x]
+  (when-let [result  x] result ))
 
 (defn yudishtira
   "Only returns truthy values as themselves.
   Falsy values(false and nil) return :ashwathama"
   {:level        :easy
    :use          '[if-let]
-   :implemented? false}
-  [x])
+   :implemented? true}
+  [x]
+  (if-let [result x] result :ashwathama))
 
 (defn duplicate-first
   "Returns coll with the first element duplicated.
@@ -36,8 +46,11 @@
   {:level        :easy
    :use          '[when-first concat]
    :alternates   '[empty? seq? conj into]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (when-first [first-element coll]
+    (concat [first-element] coll))
+  )
 
 (defn five-point-someone
   "Returns :chetan-bhagat if y is 5.
@@ -46,8 +59,14 @@
   Otherwise it returns :universe"
   {:level        :easy
    :use          '[cond]
-   :implemented? false}
-  [x y])
+   :implemented? true}
+  [x y]
+  (cond
+    (= y 5) "chetan-bhagat"
+    (= x 5) "satan-bhagat"
+    (> x y) "greece"
+    :else "universe")
+  )
 
 (defn conditions-apply
   "Given a collection of any length, returns:
@@ -79,7 +98,7 @@
   (order-in-words 2 3 4) => [:z-greater-than-x]"
   {:level        :easy
    :use          '[cond-> conj]
-   :implemented? false}
+   :implemented? true}
   [x y z])
 
 (defn zero-aliases
@@ -94,8 +113,16 @@
   \"\"  -> :empty-string"
   {:level        :easy
    :use          '[case]
-   :implemented? false}
-  [zero-like-value])
+   :implemented? true}
+  [zero-like-value]
+  (case zero-like-value
+    0 :zero
+    ([] '()) :empty
+    #{} :empty-set
+    {} :empty-map
+    "" :empty-string
+    :not-zero)
+  )
 
 (defn zero-separated-palindrome
   "Given a sequence of numbers, increment the list
@@ -105,4 +132,5 @@
   {:level :easy
    :use '[as-> reverse]
    :implemented? false}
-  [coll])
+  [coll]
+  )
