@@ -131,6 +131,10 @@
   [1 2 3] -> (4 3 2 0 2 3 4)"
   {:level :easy
    :use '[as-> reverse]
-   :implemented? false}
+   :implemented? true}
   [coll]
+  (as-> ( when (every? number? coll)
+          (map inc coll)) incremented-coll
+        (concat (reverse incremented-coll) [0] incremented-coll)
   )
+ )

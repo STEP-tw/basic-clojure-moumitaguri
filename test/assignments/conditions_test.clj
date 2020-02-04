@@ -94,3 +94,14 @@
     (is (= :not-zero (zero-aliases 4)))
   )
 )
+
+(deftest zero-separated-palindrome-check
+  (testing "sequence of single number"
+    (is (= [1 0 1] (zero-separated-palindrome [0])))
+  )
+  (testing "sequence of multiple umbers"
+    (is (= [ 4 3 2 0 2 3 4] (zero-separated-palindrome [1 2 3])))
+  )
+  (testing "invalid type of element, i.e. not number;ex :keyword"
+    (is (= [0] (zero-separated-palindrome [:q]))))
+  )
