@@ -71,6 +71,20 @@
   )
 )
 
+(deftest record-order-in-words
+  (testing "x > y > z"
+    (is (= [:x-greater-than-y :y-greater-than-z] (order-in-words 4 3 2)))
+  )
+  (testing "x > y and z > x"
+    (is (= [:x-greater-than-y :z-greater-than-x] (order-in-words 4 3 5)))
+  )
+  (testing "z > x"
+    (is (= [:z-greater-than-x] (order-in-words 1 2 3)))
+  )
+  (testing "y > z"
+    (is (= [:y-greater-than-z] (order-in-words 3 4 2))))
+)
+
 (deftest zero-like-value
   (testing "zero"
     (is (= :zero (zero-aliases 0)))
