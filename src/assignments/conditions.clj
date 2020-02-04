@@ -7,9 +7,7 @@
    :implemented? true}
   [x y]
   (when-not (zero? y) nil
-                      (/ x y)
-                      )
-  )
+                      (/ x y)))
 
 (defn informative-divide
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
@@ -18,9 +16,7 @@
    :implemented? true}
   [x y]
   (if-not (zero? y) (/ x y)
-                    :infinite
-                    )
-  )
+                    :infinite))
 
 (defn harishchandra
   "Only returns truthy values as themselves.
@@ -49,8 +45,7 @@
    :implemented? true}
   [coll]
   (when-first [first-element coll]
-    (concat [first-element] coll))
-  )
+    (concat [first-element] coll)))
 
 (defn five-point-someone
   "Returns :chetan-bhagat if y is 5.
@@ -65,8 +60,7 @@
     (= y 5) "chetan-bhagat"
     (= x 5) "satan-bhagat"
     (> x y) "greece"
-    :else "universe")
-  )
+    :else "universe"))
 
 (defn conditions-apply
   "Given a collection of any length, returns:
@@ -125,8 +119,7 @@
     #{} :empty-set
     {} :empty-map
     "" :empty-string
-    :not-zero)
-  )
+    :not-zero))
 
 (defn zero-separated-palindrome
   "Given a sequence of numbers, increment the list
@@ -139,6 +132,4 @@
   [coll]
   (as-> ( when (every? number? coll)
           (map inc coll)) incremented-coll
-        (concat (reverse incremented-coll) [0] incremented-coll)
-  )
- )
+        (concat (reverse incremented-coll) [0] incremented-coll)))
