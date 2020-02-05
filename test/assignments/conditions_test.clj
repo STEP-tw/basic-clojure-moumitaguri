@@ -71,6 +71,15 @@
   )
 )
 
+(deftest repeat-and-truncate-collection
+  (testing "only repeat"
+    (is (= [0 1 0 1] (repeat-and-truncate (range 2) true false 2)))
+  (testing "only truncate"
+    (is (= [0 1 2] (repeat-and-truncate (range 5) false true 3)))
+  )
+  (testing "repeat and truncate"
+    (is (= [1 2 3 1 2 ] (repeat-and-truncate [1 2 3] true true 5 ))))))
+
 (deftest record-order-in-words
   (testing "x > y > z"
     (is (= [:x-greater-than-y :y-greater-than-z] (order-in-words 4 3 2)))

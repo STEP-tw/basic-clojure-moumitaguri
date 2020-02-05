@@ -6,8 +6,7 @@
    :use          '[when-not zero?]
    :implemented? true}
   [x y]
-  (when-not (zero? y) nil
-                      (/ x y)))
+  (when-not (zero? y) (/ x y)))
 
 (defn informative-divide
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
@@ -81,8 +80,11 @@
   (repeat-and-truncate (range 4) true true 6) => '(0 1 2 3 0 1)"
   {:level        :medium
    :use          '[cond->> concat take]
-   :implemented? false}
-  [coll rep? truncate? n])
+   :implemented? true}
+  [coll rep? truncate? n]
+    (cond->> coll
+      rep? (concat coll)
+      truncate? (take n )))
 
 (defn order-in-words
   "Given x, y and z, returns a vector consisting of
@@ -99,7 +101,7 @@
           (> y z) (conj :y-greater-than-z)
           (> z x) (conj :z-greater-than-x )))
 
-(defn zero-aliases
+  (defn zero-aliases
   "Given a zero-like value(0,[],(),#{},{}) should
   give back an alias for each type of zero like value
   or a default of :not-zero
