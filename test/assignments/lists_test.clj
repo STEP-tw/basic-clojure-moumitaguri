@@ -42,4 +42,7 @@
 
    (testing "union"
      (is (= [1 2 3 4 5] (union [1 2 3] [2 3 4 5]))))
+
+   (testing "sqr-of-the-first"
+     (is (= [16 16 16] (sqr-of-the-first [ 4 5 6]))))
    ))

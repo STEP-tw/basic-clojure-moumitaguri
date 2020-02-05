@@ -93,6 +93,8 @@
         (l/difference [1 2 3] [ 3 4 5])
         ;;union
         (l/union [1 2 3] [ 3 4 5])
+        ;;sqr-of-the-first
+        (l/sqr-of-the-first [ 4 5 6])
         )))
 
 (defn -main [& args]
