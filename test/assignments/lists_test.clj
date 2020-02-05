@@ -19,4 +19,8 @@
        (is (= 2 (count' [1 2]))) "vector"
        (is (= 2 (count' '(1 2)))) "list"
        (is (= 2 (count' #{1 2}))) "set"
-       (is (= 2 (count' {:a :b :c :d}))) "map"))))
+       (is (= 2 (count' {:a :b :c :d}))) "map"))
+
+   (testing "reverse"
+     (is (= [3 2 1] (reverse' [1 2 3])))
+     (is (= [3 2 1 0] (reverse' (range 4)))))))

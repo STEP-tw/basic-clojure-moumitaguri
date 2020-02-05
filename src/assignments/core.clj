@@ -78,6 +78,9 @@
         (l/count' '(1 2))
         (l/count' #{1 2})
         (l/count' (range 4))
+        ;;reduce
+        (l/reverse' [1 2])
+        (l/reverse' (range 3))
         )))
 
 (defn -main [& args]
