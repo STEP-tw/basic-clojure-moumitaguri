@@ -89,6 +89,10 @@
         (l/some?' odd? [ 2 4])
         ;;sum-of-adjacent-numbers
         (l/sum-of-adjacent-digits [1 2 3])
+        ;;difference
+        (l/difference [1 2 3] [ 3 4 5])
+        ;;union
+        (l/union [1 2 3] [ 3 4 5])
         )))
 
 (defn -main [& args]

@@ -39,4 +39,7 @@
 
    (testing "differnce"
      (is (= [4 5] (difference [1 2 3] [2 3 4 5]))))
+
+   (testing "union"
+     (is (= [1 2 3 4 5] (union [1 2 3] [2 3 4 5]))))
    ))
