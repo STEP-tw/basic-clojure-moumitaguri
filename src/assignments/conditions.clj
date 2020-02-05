@@ -101,7 +101,7 @@
           (> y z) (conj :y-greater-than-z)
           (> z x) (conj :z-greater-than-x )))
 
-  (defn zero-aliases
+(defn zero-aliases
   "Given a zero-like value(0,[],(),#{},{}) should
   give back an alias for each type of zero like value
   or a default of :not-zero

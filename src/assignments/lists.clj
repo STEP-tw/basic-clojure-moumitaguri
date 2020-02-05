@@ -17,8 +17,17 @@
   {:level        :easy
    :use          '[loop recur]
    :dont-use     '[filter]
-   :implemented? false}
-  [pred coll])
+   :implemented? true}
+  [pred coll]
+  (loop [collection coll
+         result-set []]
+    (if (empty? collection)
+      result-set
+      (recur (next collection)
+             (if (pred (first collection))
+               (conj result-set (first collection))
+               result-set)))))
+
 
 (defn reduce'
   "Implement your own multi-arity version of reduce
@@ -37,8 +46,15 @@
   {:level        :easy
    :use          '[loop recur]
    :dont-use     '[count]
-   :implemented? false}
-  ([coll]))
+   :implemented? true}
+  ([coll]
+   (loop [collection coll
+          count 0]
+     (if (empty? collection) count
+                             (recur (next collection)
+                                    (if-not (empty? collection)
+                                      (inc count)
+                                      count))))))
 
 (defn reverse'
   "Implement your own version of reverse that reverses a coll.

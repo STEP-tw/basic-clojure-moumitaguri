@@ -58,18 +58,13 @@
 
 (deftest five-point-who
   (testing "chetan bhagat"
-    (is (= "chetan-bhagat" (five-point-someone 1 5)))
-  )
+    (is (= "chetan-bhagat" (five-point-someone 1 5))))
   (testing "satan bhagat"
-    (is (= "satan-bhagat" (five-point-someone 5 3)))
-  )
+    (is (= "satan-bhagat" (five-point-someone 5 3))))
   (testing "greece"
-    (is (= "greece" (five-point-someone 7 6)))
-  )
+    (is (= "greece" (five-point-someone 7 6))))
   (testing "universe"
-    (is (= "universe" (five-point-someone 1 1)))
-  )
-)
+    (is (= "universe" (five-point-someone 1 1)))))
 
 (deftest repeat-and-truncate-collection
   (testing "only repeat"

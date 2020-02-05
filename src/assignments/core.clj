@@ -69,7 +69,15 @@
         (l/map' identity [1 2 3])
         (l/map' inc [1 2 3])
         (l/map' + [1 2 3] [4 5 6])
-        ;; fill the rest accordingly
+        ;; filter
+        (l/filter' even? (range 4))
+        (l/filter' odd? (range 5))
+        ;; count
+        (l/count' [])
+        (l/count' [1 2])
+        (l/count' '(1 2))
+        (l/count' #{1 2})
+        (l/count' (range 4))
         )))
 
 (defn -main [& args]
