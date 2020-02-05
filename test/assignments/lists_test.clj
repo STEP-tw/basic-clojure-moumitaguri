@@ -28,4 +28,8 @@
    (testing "every"
      (is (= true (every?' even? [0 2 4])))
      (is (= false (every?' odd? [1 2 3])))
-     (is (= true (every?' even? []))))))
+     (is (= true (every?' even? []))))
+
+   (testing "some"
+     (is (= false (some?' odd? [ 2 4])))
+     (is (= true (some?' even? [1 2 3]))))))

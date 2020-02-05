@@ -84,6 +84,9 @@
         ;;every
         (l/every?' odd? [ 1 2 3])
         (l/every?' even? [ 2 4])
+        ;;some
+        (l/some?' even? [ 1 2 3])
+        (l/some?' odd? [ 2 4])
         )))
 
 (defn -main [& args]
