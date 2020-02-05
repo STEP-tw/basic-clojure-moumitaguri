@@ -87,6 +87,8 @@
         ;;some
         (l/some?' even? [ 1 2 3])
         (l/some?' odd? [ 2 4])
+        ;;sum-of-adjacent-numbers
+        (l/sum-of-adjacent-digits [1 2 3])
         )))
 
 (defn -main [& args]

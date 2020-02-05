@@ -32,4 +32,7 @@
 
    (testing "some"
      (is (= false (some?' odd? [ 2 4])))
-     (is (= true (some?' even? [1 2 3]))))))
+     (is (= true (some?' even? [1 2 3]))))
+
+   (testing "sum-of-adjacent-numbers"
+     (is (= [3 5] (sum-of-adjacent-digits [1 2 3]))))))
