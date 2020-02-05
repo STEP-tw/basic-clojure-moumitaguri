@@ -23,4 +23,9 @@
 
    (testing "reverse"
      (is (= [3 2 1] (reverse' [1 2 3])))
-     (is (= [3 2 1 0] (reverse' (range 4)))))))
+     (is (= [3 2 1 0] (reverse' (range 4)))))
+
+   (testing "every"
+     (is (= true (every?' even? [0 2 4])))
+     (is (= false (every?' odd? [1 2 3])))
+     (is (= true (every?' even? []))))))

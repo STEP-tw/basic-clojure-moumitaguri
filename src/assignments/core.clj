@@ -81,6 +81,9 @@
         ;;reduce
         (l/reverse' [1 2])
         (l/reverse' (range 3))
+        ;;every
+        (l/every?' odd? [ 1 2 3])
+        (l/every?' even? [ 2 4])
         )))
 
 (defn -main [& args]
