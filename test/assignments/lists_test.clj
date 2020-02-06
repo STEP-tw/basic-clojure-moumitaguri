@@ -48,4 +48,8 @@
 
    (testing "muted-thirds"
      (is (= [0 1 0 3 4 0] (muted-thirds (range 6)))))
+
+   (testing "index-of"
+     (is (= -1 (index-of [1 2 3] 5)))
+     (is (= 2 (index-of [ 1 2 3 4] 3))))
    ))

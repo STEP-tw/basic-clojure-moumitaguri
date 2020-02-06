@@ -97,6 +97,9 @@
         (l/sqr-of-the-first [ 4 5 6])
         ;;muted-thirds
         (l/muted-thirds (range 5))
+        ;;index-of
+        (l/index-of [] 1)
+        (l/index-of [ 1 2] 1)
         )))
 
 (defn -main [& args]
