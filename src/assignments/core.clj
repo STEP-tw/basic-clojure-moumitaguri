@@ -100,6 +100,8 @@
         ;;index-of
         (l/index-of [] 1)
         (l/index-of [ 1 2] 1)
+        ;;cross-product
+        (l/cross-product [1 2] [ 2 3])
         )))
 
 (defn -main [& args]
