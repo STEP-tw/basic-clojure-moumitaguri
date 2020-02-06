@@ -45,4 +45,7 @@
 
    (testing "sqr-of-the-first"
      (is (= [16 16 16] (sqr-of-the-first [ 4 5 6]))))
+
+   (testing "muted-thirds"
+     (is (= [0 1 0 3 4 0] (muted-thirds (range 6)))))
    ))
