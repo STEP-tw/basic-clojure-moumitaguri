@@ -16,10 +16,14 @@
      (testing "count of empty collection"
        (is (= 0 (count' []))))
      (testing "count of non-empty collection"
-       (is (= 2 (count' [1 2]))) "vector"
-       (is (= 2 (count' '(1 2)))) "list"
-       (is (= 2 (count' #{1 2}))) "set"
-       (is (= 2 (count' {:a :b :c :d}))) "map"))
+       (testing "vector"
+         (is (= 2 (count' [1 2]))))
+       (testing "list"
+         (is (= 2 (count' '(1 2)))) "list")
+       (testing "set"
+         (is (= 2 (count' #{1 2}))) "set")
+       (testing "map"
+         (is (= 2 (count' {:a :b :c :d}))) "map")))
 
    (testing "reverse"
      (is (= [3 2 1] (reverse' [1 2 3])))
@@ -37,7 +41,7 @@
    (testing "sum-of-adjacent-numbers"
      (is (= [3 5] (sum-of-adjacent-digits [1 2 3]))))
 
-   (testing "differnce"
+   (testing "difference"
      (is (= [4 5] (difference [1 2 3] [2 3 4 5]))))
 
    (testing "union"
