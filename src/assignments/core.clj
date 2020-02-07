@@ -87,6 +87,9 @@
         ;;some
         (l/some?' even? [ 1 2 3])
         (l/some?' odd? [ 2 4])
+        ;;ascending
+        (l/ascending? [ 1 2])
+        (l/ascending? [ 3 1 2])
         ;;sum-of-adjacent-numbers
         (l/sum-of-adjacent-digits [1 2 3])
         ;;difference

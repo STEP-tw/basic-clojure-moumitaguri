@@ -55,7 +55,7 @@
                                       (inc count)
                                       count))))))
 
-(defn reverse'
+  (defn reverse'
   "Implement your own version of reverse that reverses a coll.
   Returns nil if coll provided is not a sequence"
   {:level        :easy
@@ -75,7 +75,7 @@
   ([pred coll]
    (loop [collection coll
           recur? true]
-     (if (and recur? (not (empty? collection)))
+     (if (and recur? (seq collection))
        (recur (next collection)
               (pred (first collection)))
        recur?))))
@@ -102,8 +102,9 @@
   {:level        :easy
    :use          '[partition every? partial apply <=]
    :dont-use     '[loop recur]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (apply <= coll))
 
 (defn distinct'
   "Implement your own lazy sequence version of distinct which returns
