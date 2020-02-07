@@ -66,4 +66,7 @@
      (is (= [[1 4] [1 3] [1 5] [2 4] [2 3] [ 2 5] [3 4]] (cross-product [ 1 2 3] [ 4 3 5]))))
 
    (testing "double-up"
-     (is (= [0 0 1 1 2 2] (double-up (range 3)))))))
+     (is (= [0 0 1 1 2 2] (double-up (range 3)))))
+
+   (testing "third-or-fifit"
+     (is (= [2 4] (third-or-fifth (range 6)))))))

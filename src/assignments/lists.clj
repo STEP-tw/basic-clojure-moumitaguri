@@ -221,8 +221,9 @@
   elements whose index is either divisible by three or five"
   {:level        :easy
    :use          '[keep-indexed when :optionally map-indexed filter]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (keep-indexed #(when (or (= % 2) (= % 4))  %2) coll))
 
 (defn sqr-of-the-first
   "Given a collection, return a new collection that contains the

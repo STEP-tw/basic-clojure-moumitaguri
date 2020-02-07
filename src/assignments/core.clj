@@ -107,6 +107,8 @@
         (l/cross-product [1 2] [ 2 3])
         ;;double-up
         (l/double-up (range 4))
+        ;;third-or-fifth
+        (l/third-or-fifth (range 5))
         )))
 
 (defn -main [& args]
