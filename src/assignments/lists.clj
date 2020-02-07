@@ -212,8 +212,9 @@
   each element repeated twice"
   {:level        :easy
    :use          '[mapcat partial repeat :optionally vector]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (mapcat #(repeat 2 %) coll))
 
 (defn third-or-fifth
   "Given a collection return a new collection that contains

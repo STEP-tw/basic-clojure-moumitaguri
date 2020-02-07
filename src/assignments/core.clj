@@ -105,6 +105,8 @@
         (l/index-of [ 1 2] 1)
         ;;cross-product
         (l/cross-product [1 2] [ 2 3])
+        ;;double-up
+        (l/double-up (range 4))
         )))
 
 (defn -main [& args]
